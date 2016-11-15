@@ -1,2 +1,2 @@
 # tic-tac-toe
-Tic-tac-toe in written in pure HTML5.
+Browser-based Tic-Tac-Toe.

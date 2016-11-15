@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: darkgray;
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+
+#tic-tac-toe {
+  width: 100vmin;
+  height: 100vmin;
+  background: darkgray;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#tic-tac-toe.complete .cell {
+  pointer-events: none;
+}
+
+.row {
+  height: calc(100% / 3);
+  display: flex;
+}
+
+.row:nth-child(2) {
+  margin: 2% 0;
+}
+
+.cell {
+  position: relative;
+  width: calc(100% / 3);
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-color 0.25s;
+}
+
+.cell.matched, .cell.previous {
+  background-color: yellow;
+}
+
+.cell.matched.x, .cell.previous.x {
+  background-color: pink;
+}
+
+.cell.matched.o, .cell.previous.o {
+  background-color: lightblue;
+}
+
+.cell:not(.filled):hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.cell:nth-child(2) {
+  margin: 0 2%;
+}
+
+.cell.x, .cell.o {
+  animation: appear .2s ease forwards;
+}
+
+.cell.x {
+  background-image: url(sprites/x.svg);
+}
+
+.cell.o {
+  background-image: url(sprites/o.svg);
+}
+
+@keyframes appear {
+  from {
+    background-size: 0%;
+    -webkit-background-size: 0%;
+  }
+  50% {
+    background-size: 20%;
+    -webkit-background-size: 20%;
+  }
+  80% {
+    background-size: 85%;
+    -webkit-background-size: 85%;
+  }
+  to {
+    background-size: 80%;
+    -webkit-background-size: 80%;
+  }
+}
